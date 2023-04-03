@@ -1,4 +1,3 @@
-
 drop table STUDENT;
 drop table COURSE;
 drop table ENROL;
