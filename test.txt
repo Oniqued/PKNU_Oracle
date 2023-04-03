@@ -1,0 +1,49 @@
+create view 주문상세내역뷰 as
+select 회원.성명, 회원.회원번호, 수량*단가 as 주문액
+from 주문, 상품, 주문상세내역, 회원
+where 주문.주문번호 = 주문상세내역.주문번호
+and 상품.상품번호 = 주문상세내역.상품번호
+and 회원.회원번호 = 주문.회원번호;
+
+create view 날짜별주문액뷰 as
+select 주문날짜, sum(주문액) as 주문액합계 from 주문내역뷰
+group by 주문날짜;
+
+Select *from 날짜별주문액뷰
+Where 주문액합계 = (select max(주문액합계) from 날짜별주문액뷰);
+
+1. 돈을 많이 쓴 사람? 회원별 주문 합 중 max 
+create view 회원별주문액 as
+select 회원번호, 성명, sum(주문액) as 주문액합계
+from 주문상세내역뷰 group by (회원번호, 성명);
+
+select * from 회원별주문액 where 주문액합계 = (select max(주문액합계) from 회원별주문액);
+
+
+-------------------------------------------
+create view 통합뷰 as 
+select 회원.*, 상품.*, 분류.분류명, 주문.주문일, 주문.주문번호, 주문상세내역.수량
+from 회원, 상품, 분류, 주문, 주문상세내역
+where 회원.회원번호 = 주문.회원번호, and 상품.상품번호 = 주문상세내역.상품번호 
+and 주문.주문번호 = 주문상세내역.주문번호 and 분류.분류코드 = 상품.분류코드;
+
+create view 회원별매출액합계뷰 as 
+select 회원번호, 성명, sum(수량*단가) as 주문액합계 from 통합뷰
+group by (회원번호, 성명);
+
+select * from 회원별매출액합계부 where 주문액합계 = (select max(주문액합계) from 회원별주문액합계뷰);
+
+-------------------치환변수? 
+scanf?
+select * from 학생 where 학과번호 = &원하는학과번호;
+-- / ->는 이전 문 실행 
+-- l -> ?
+
+insert into 학생 values (&입력할학생의학번, &입력할학생의이름, &입력할학생의학과번호,0,0);
+
+
+
+
+
+
+
