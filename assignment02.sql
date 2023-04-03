@@ -1,49 +1,104 @@
---1ë²ˆ ë¬¸ì œ 
-create table ì„œìš¸íšŒì›ì—°ë½ì²˜ (
-	íšŒì›ë²ˆí˜¸ varchar2(7),
-	ì„±ëª… varchar2(20),
-	ì£¼ì†Œ varchar2(50),
-	ì „í™”ë²ˆí˜¸ varchar2(20),
-	primary key (íšŒì›ë²ˆí˜¸)
+--1¹ø ¹®Á¦ 
+create table ¼­¿ïÈ¸¿ø¿¬¶ôÃ³ (
+	È¸¿ø¹øÈ£ varchar2(7),
+	¼º¸í varchar2(20),
+	ÁÖ¼Ò varchar2(50),
+	ÀüÈ­¹øÈ£ varchar2(20),
+	primary key (È¸¿ø¹øÈ£)
 );
 
-insert into ì„œìš¸íšŒì›ì—°ë½ì²˜ (íšŒì›ë²ˆí˜¸, ì„±ëª…, ì£¼ì†Œ, ì „í™”ë²ˆí˜¸)
-select íšŒì›ë²ˆí˜¸, ì„±ëª…, ì£¼ì†Œ, ì „í™”ë²ˆí˜¸ from íšŒì›
-where ì£¼ì†Œ like 'ì„œìš¸%';
+insert into ¼­¿ïÈ¸¿ø¿¬¶ôÃ³ (È¸¿ø¹øÈ£, ¼º¸í, ÁÖ¼Ò, ÀüÈ­¹øÈ£)
+select È¸¿ø¹øÈ£, ¼º¸í, ÁÖ¼Ò, ÀüÈ­¹øÈ£ from È¸¿ø
+where ÁÖ¼Ò like '¼­¿ï%';
 
---2ë²ˆ ë¬¸ì œ 
-create table ì§€ë°©íšŒì›ì—°ë½ì²˜ (
-	íšŒì›ë²ˆí˜¸ varchar2(7),
-	ì„±ëª… varchar2(20),
-	ì£¼ì†Œ varchar2(50),
-	ì „í™”ë²ˆí˜¸ varchar2(20),
-	primary key (íšŒì›ë²ˆí˜¸)
+--2¹ø ¹®Á¦ 
+create table Áö¹æÈ¸¿ø¿¬¶ôÃ³ (
+	È¸¿ø¹øÈ£ varchar2(7),
+	¼º¸í varchar2(20),
+	ÁÖ¼Ò varchar2(50),
+	ÀüÈ­¹øÈ£ varchar2(20),
+	primary key (È¸¿ø¹øÈ£)
 );
 
-insert into ì§€ë°©íšŒì›ì—°ë½ì²˜ (íšŒì›ë²ˆí˜¸, ì„±ëª…, ì£¼ì†Œ, ì „í™”ë²ˆí˜¸)
-select íšŒì›ë²ˆí˜¸, ì„±ëª…, ì£¼ì†Œ, ì „í™”ë²ˆí˜¸ from íšŒì›
-where not ì£¼ì†Œ like 'ì„œìš¸ì‹œ%';
+insert into Áö¹æÈ¸¿ø¿¬¶ôÃ³ (È¸¿ø¹øÈ£, ¼º¸í, ÁÖ¼Ò, ÀüÈ­¹øÈ£)
+select È¸¿ø¹øÈ£, ¼º¸í, ÁÖ¼Ò, ÀüÈ­¹øÈ£ from È¸¿ø
+where not ÁÖ¼Ò like '¼­¿ï½Ã%';
 
---3ë²ˆ ë¬¸ì œ
-insert into ë¶„ë¥˜ values (4, 'í‚¤ë³´ë“œ');
+--3¹ø ¹®Á¦
+insert into ºĞ·ù values (4, 'Å°º¸µå');
 
---4ë²ˆ ë¬¸ì œ 
-insert into ìƒí’ˆ values (78, 'ì‚¼ì„± 32GB USB ë©”ëª¨ë¦¬', 4, null, 2);
+--4¹ø ¹®Á¦ 
+insert into »óÇ° values (78, '»ï¼º 32GB USB ¸Ş¸ğ¸®', 4, null, 2);
 
---5ë²ˆ ë¬¸ì œ
-update íšŒì› set ì£¼ì†Œ = 'ë¶€ì‚°ì‹œ ê¸ˆì •êµ¬' where íšŒì›ë²ˆí˜¸ = 'T001';
+--5¹ø ¹®Á¦
+update È¸¿ø set ÁÖ¼Ò = 'ºÎ»ê½Ã ±İÁ¤±¸' where È¸¿ø¹øÈ£ = 'T001';
 
---6ë²ˆ ë¬¸ì œ
-update ìƒí’ˆ set ë‹¨ê°€ = ë‹¨ê°€+(ë‹¨ê°€/10) where ë¶„ë¥˜ì½”ë“œ = 1;
+--6¹ø ¹®Á¦
+update »óÇ° set ´Ü°¡ = ´Ü°¡+(´Ü°¡/10) where ºĞ·ùÄÚµå = 1;
 
---7ë²ˆ ë¬¸ì œ 
-delete from ì£¼ë¬¸ìƒì„¸ë‚´ì—­ where ìƒí’ˆë²ˆí˜¸ = 8;
-delete from ìƒí’ˆ where ìƒí’ˆë²ˆí˜¸ = 8;
+--7¹ø ¹®Á¦ 
+delete from ÁÖ¹®»ó¼¼³»¿ª where »óÇ°¹øÈ£ = 8;
+delete from »óÇ° where »óÇ°¹øÈ£ = 8;
 
---8ë²ˆ ë¬¸ì œ 
-delete from ì£¼ë¬¸ where íšŒì›ë²ˆí˜¸='T004';
-delete from íšŒì› where íšŒì›ë²ˆí˜¸='T004';
+--8¹ø ¹®Á¦ 
+delete from ÁÖ¹®»ó¼¼³»¿ª where ÁÖ¹®¹øÈ£ in (select ÁÖ¹®¹øÈ£ from ÁÖ¹® where È¸¿ø¹øÈ£ = 'T004');
+delete from ÁÖ¹® where È¸¿ø¹øÈ£ = 'T004';
+delete from È¸¿ø where È¸¿ø¹øÈ£ = 'T004';
 
+--9¹ø ¹®Á¦
+select È¸¿ø¹øÈ£ from ÁÖ¹®
+where È¸¿ø¹øÈ£ in (select È¸¿ø¹øÈ£ from È¸¿ø where ¼ºº° = '¿©')
+having count(*) >= 1 group by È¸¿ø¹øÈ£;
 
+--10¹ø ¹®Á¦ 
+select »óÇ°¹øÈ£ from »óÇ° where ´Ü°¡ <= 10000
+minus
+select »óÇ°¹øÈ£ from ÁÖ¹®»ó¼¼³»¿ª;
 
-	
+--11¹ø ¹®Á¦ 
+select avg(´Ü°¡) as ´Ü°¡_Æò±Õ from »óÇ°;
+
+--12¹ø ¹®Á¦ 
+select ºĞ·ùÄÚµå, avg(´Ü°¡) as ´Ü°¡_Æò±Õ from »óÇ° group by ºĞ·ùÄÚµå;
+
+--13¹ø ¹®Á¦
+select count(*) as ¸¸¿øÀÌ»ó_»óÇ° from »óÇ° where ´Ü°¡ >= 10000;
+
+--14¹ø ¹®Á¦
+select È¸¿ø¹øÈ£, count(*) as ÁÖ¹®_È½¼ö from ÁÖ¹® group by È¸¿ø¹øÈ£;
+
+--15¹ø ¹®Á¦ 
+select È¸¿ø¹øÈ£ from ÁÖ¹® having count(È¸¿ø¹øÈ£) >= 3 group by È¸¿ø¹øÈ£;
+
+--16¹ø ¹®Á¦
+select i.»óÇ°¹øÈ£, sum(oi.¼ö·®*i.´Ü°¡) as ÁÖ¹®¾× from »óÇ° i, ÁÖ¹®»ó¼¼³»¿ª oi
+where i.»óÇ°¹øÈ£ = oi.»óÇ°¹øÈ£
+group by i.»óÇ°¹øÈ£;
+
+--17¹ø ¹®Á¦ 
+select i.»óÇ°¹øÈ£ from »óÇ° i, ÁÖ¹®»ó¼¼³»¿ª oi
+where i.»óÇ°¹øÈ£ = oi.»óÇ°¹øÈ£
+having sum(oi.¼ö·®*i.´Ü°¡) >= 100000
+group by i.»óÇ°¹øÈ£;
+
+--18¹ø ¹®Á¦ 
+select o.ÁÖ¹®¹øÈ£, sum(oi.¼ö·®*i.´Ü°¡) as ÁÖ¹®¾× from »óÇ° i, ÁÖ¹®»ó¼¼³»¿ª oi, ÁÖ¹® o
+where i.»óÇ°¹øÈ£ = oi.»óÇ°¹øÈ£ and o.ÁÖ¹®¹øÈ£ = oi.ÁÖ¹®¹øÈ£
+group by o.ÁÖ¹®¹øÈ£;
+
+--19(1)¹ø ¹®Á¦ 
+select È¸¿ø¹øÈ£ from ÁÖ¹® where ÁÖ¹®ÀÏ = '2017-01-02'
+intersect
+select È¸¿ø¹øÈ£ from ÁÖ¹® where ÁÖ¹®ÀÏ = '2017-01-03';
+
+--19(2)¹ø ¹®Á¦ 
+select È¸¿ø¹øÈ£ from ÁÖ¹® where ÁÖ¹®ÀÏ = '2017-01-02' 
+and È¸¿ø¹øÈ£ in (select È¸¿ø¹øÈ£ from ÁÖ¹® where ÁÖ¹®ÀÏ = '2017-01-03');
+
+--20(1)¹ø ¹®Á¦
+select »óÇ°¹øÈ£, »óÇ°¸í from »óÇ° 
+where ´Ü°¡ > all(select ´Ü°¡ from »óÇ° where ºĞ·ùÄÚµå = 1);
+
+--21(1)¹ø ¹®Á¦
+select i1.»óÇ°¹øÈ£, i2.»óÇ°¸í from »óÇ° i1, »óÇ° i2
+where i2.»óÇ°¹øÈ£ = 14 and i1.´Ü°¡ > i2.´Ü°¡;
