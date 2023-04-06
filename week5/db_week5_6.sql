@@ -7,7 +7,7 @@ Begin
 		DBMS_OUTPUT.PUT_LINE(i);
 	end loop;
 
-	i = 0;	
+	i := 0;	
 
 	while i < limit loop
 		DBMS_OUTPUT.PUT_LINE(i);
