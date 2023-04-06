@@ -3,8 +3,8 @@ drop table COURSE;
 drop table ENROL;
 
 create table STUDENT (
-  sno number(3),
-  sname nvarchar2(4),
+  sno number(3) primary key,--제약조건 추가
+  sname nvarchar2(4) constraint sname_always_exists not null, --제약조건 추가
   year number(1),
   dept nvarchar2(5)
 );
@@ -16,7 +16,7 @@ create table STUDENT (
  insert into STUDENT values (500, '박종화', 2, '산공');
   
 create table COURSE (
-  cno char(4),
+  cno char(4) primary key,
   cname nvarchar2(10),
   credit number(1),
   dept nvarchar2(4),
@@ -32,7 +32,10 @@ insert into COURSE values ('E412', '반도체', 3, '전자', '홍봉진');
   
   create table ENROL (
   sno number(3),
+  foreign key(sno) references student(sno),
   cno char(4),
+  foreign key(cno) references course(cno) on delete cascade***,
+  primary key(sno, cno),
   grade char,
   midterm integer,
   finterm integer

@@ -4,8 +4,8 @@ drop table STUDENT;
 drop table COURSE;
 
 create table STUDENT (
-  sno number(3) primary key,
-  sname nvarchar2(4) constraint sname_always_exists not null,
+  sno number(3) primary key, --제약 조건 추가
+  sname nvarchar2(4) constraint sname_always_exists not null, --제약 조건 추가 : sname은 비어있으면 안된다
   year number(1) default 1, 
   dept nvarchar2(5),
   unique (dept, sname),
@@ -62,6 +62,3 @@ insert into ENROL values (400, 'E412',	'C',	65,	75);
 insert into ENROL values (500, 'C312',	'B',	85,	80);
 
 commit;
-
-
-select * from dual;
