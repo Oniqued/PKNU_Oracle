@@ -34,7 +34,7 @@ insert into COURSE values ('E412', '¹İµµÃ¼', 3, 'ÀüÀÚ', 'È«ºÀÁø');
   sno number(3),
   foreign key(sno) references student(sno),
   cno char(4),
-  foreign key(cno) references course(cno) on delete cascade***,
+  foreign key(cno) references course(cno) on delete cascade,
   primary key(sno, cno),
   grade char,
   midterm integer,

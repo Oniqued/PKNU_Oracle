@@ -1,8 +1,9 @@
 create or replace procedure exam4(
-show_sj_id out subject.sj_id%type
+sj_id_in in subject.sj_id%type
+sj_name_out out subject.sj_name%type
 )
-is
 begin
-	--select sj_name into show_sj_id from subject where sj_i= show_sj_id;
+	select sj_name into sj_name_out from subject where sj_id = sj_id_in;
+	DBMS_OUTPUT.PUT_LINE('과목명: ' || sj_name_out);
 end;
 /
