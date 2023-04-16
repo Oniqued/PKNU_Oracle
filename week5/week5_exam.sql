@@ -58,3 +58,29 @@ end exam04;
 
 exec exam04('cm001');
 --※ 값들을 입력받을 때는 C언어의 scanf처럼 키보드 타이핑으로 입력받는 게 아니라, execute exam1('9955555', 'gyebak', 'computer');이런 식으로 프로시저를 실행시킬 때 인자로 입력하면 됩니다.
+
+--5. 커서를 이용하여 매개 변수로 학번을 입력 받아 이 학생이 어떤 과목을 수강하고 있는지 과목번호와 과목 이름을 모두 출력하는 프로시저를 만드시오
+create or replace procedure exam05(v_stuid stu.stu_id%type)
+is
+    v_sjid subject.sj_id%type;
+    v_sjname subject.sj_name%type;
+    
+    cursor c_sugang is
+    select subject.sj_id, subject.sj_name from sugang, subject
+    where sugang.sj_id = subject.sj_id
+    and sugang.stu_id = v_stuid;
+begin
+    open c_sugang;
+    loop
+        fetch c_sugang into v_sjid, v_sjname;
+        exit when c_sugang%notfound;
+        dbms_output.put_line(v_sjid|| ' ' ||v_sjname);
+    end loop;
+    close c_sugang;
+end exam05;
+/
+
+exec exam05('9911111');
+
+
+
