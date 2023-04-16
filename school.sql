@@ -1,47 +1,47 @@
-drop table ¼ö°­;
-drop table °ú¸ñ;
-drop table ÇĞ»ı;
+drop table ìˆ˜ê°•;
+drop table ê³¼ëª©;
+drop table í•™ìƒ;
 
 
-create table ÇĞ»ı (
-	ÇĞ¹ø varchar2(7),
-	ÀÌ¸§ varchar2(20),
-	ÇĞ°ú¹øÈ£ varchar2(3),
-        ÀÌ¼öÇĞÁ¡ int,
-	ÆòÁ¡ float,
-	primary key (ÇĞ¹ø)
+create table í•™ìƒ (
+	í•™ë²ˆ varchar2(7),
+	ì´ë¦„ varchar2(20),
+	í•™ê³¼ë²ˆí˜¸ varchar2(3),
+        ì´ìˆ˜í•™ì  int,
+	í‰ì  float,
+	primary key (í•™ë²ˆ)
 );
 
-insert into ÇĞ»ı values ('9912345', 'È«±æµ¿', '010', 100, 4.10);
-insert into ÇĞ»ı values ('9922222', '¹ÚµÎ¸®', '010',80, 3.25);
-insert into ÇĞ»ı values ('9933333', '±èµ¹¼è', '020',90, 3.00);
-insert into ÇĞ»ı values ('9944444', 'ÀÌÇØ¼Ö', '020',120, 2.60);
-insert into ÇĞ»ı values ('9955555', 'ÀÓÇÏ´Ã', '030',130, 1.90);
+insert into í•™ìƒ values ('9912345', 'í™ê¸¸ë™', '010', 100, 4.10);
+insert into í•™ìƒ values ('9922222', 'ë°•ë‘ë¦¬', '010',80, 3.25);
+insert into í•™ìƒ values ('9933333', 'ê¹€ëŒì‡ ', '020',90, 3.00);
+insert into í•™ìƒ values ('9944444', 'ì´í•´ì†”', '020',120, 2.60);
+insert into í•™ìƒ values ('9955555', 'ì„í•˜ëŠ˜', '030',130, 1.90);
 
-create table °ú¸ñ (
-	°ú¸ñ¹øÈ£ varchar2(5),
-	°ú¸ñÀÌ¸§ varchar2(30),
-	ÃÖ´ëÀÎ¿ø int,
-        primary key (°ú¸ñ¹øÈ£)
+create table ê³¼ëª© (
+	ê³¼ëª©ë²ˆí˜¸ varchar2(5),
+	ê³¼ëª©ì´ë¦„ varchar2(30),
+	ìµœëŒ€ì¸ì› int,
+        primary key (ê³¼ëª©ë²ˆí˜¸)
 );
 
-insert into °ú¸ñ values ('cs100', 'µ¥ÀÌÅÍº£ÀÌ½º', 40);
-insert into °ú¸ñ values ('cs200', '¿î¿µÃ¼Á¦', 20);
-insert into °ú¸ñ values ('cs300', 'ÀÚ·á±¸Á¶', 30);
-insert into °ú¸ñ values ('cs400', 'ÀÚ¹ÙÇÁ·Î±×·¡¹Ö', 40);
+insert into ê³¼ëª© values ('cs100', 'ë°ì´í„°ë² ì´ìŠ¤', 40);
+insert into ê³¼ëª© values ('cs200', 'ìš´ì˜ì²´ì œ', 20);
+insert into ê³¼ëª© values ('cs300', 'ìë£Œêµ¬ì¡°', 30);
+insert into ê³¼ëª© values ('cs400', 'ìë°”í”„ë¡œê·¸ë˜ë°', 40);
 
-Create table ¼ö°­ (
-	ÇĞ¹ø varchar2(7),
-	°ú¸ñ¹øÈ£ varchar2(5),
-	primary key (ÇĞ¹ø, °ú¸ñ¹øÈ£),
-	foreign key (ÇĞ¹ø) references ÇĞ»ı,
-	foreign key (°ú¸ñ¹øÈ£) references °ú¸ñ
+Create table ìˆ˜ê°• (
+	í•™ë²ˆ varchar2(7),
+	ê³¼ëª©ë²ˆí˜¸ varchar2(5),
+	primary key (í•™ë²ˆ, ê³¼ëª©ë²ˆí˜¸),
+	foreign key (í•™ë²ˆ) references í•™ìƒ,
+	foreign key (ê³¼ëª©ë²ˆí˜¸) references ê³¼ëª©
 );
 
-Insert into ¼ö°­ values ('9912345','cs400');
-Insert into ¼ö°­ values ('9912345','cs200');
-Insert into ¼ö°­ values ('9922222','cs100');
-Insert into ¼ö°­ values ('9922222','cs300');
-Insert into ¼ö°­ values ('9933333','cs300');
-Insert into ¼ö°­ values ('9944444','cs200');
-Insert into ¼ö°­ values ('9955555','cs400');
+Insert into ìˆ˜ê°• values ('9912345','cs400');
+Insert into ìˆ˜ê°• values ('9912345','cs200');
+Insert into ìˆ˜ê°• values ('9922222','cs100');
+Insert into ìˆ˜ê°• values ('9922222','cs300');
+Insert into ìˆ˜ê°• values ('9933333','cs300');
+Insert into ìˆ˜ê°• values ('9944444','cs200');
+Insert into ìˆ˜ê°• values ('9955555','cs400');
