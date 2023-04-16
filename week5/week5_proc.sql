@@ -27,7 +27,7 @@ IS
 Begin
 	select stu_id, stu_name into v_stuid, v_stuname from stu
 	where stu_id = '9911111';
-	DBMS_OUTPUT.PUT_LINE('ÇĞ¹ø : ' || v_stuid || ', ÀÌ¸§ : ' || v_stuname); 
+	DBMS_OUTPUT.PUT_LINE('í•™ë²ˆ : ' || v_stuid || ', ì´ë¦„ : ' || v_stuname); 
 End;
 /
 
@@ -52,8 +52,8 @@ IS
 Begin
 	select stu_name, stu_dept into v_stuname, v_studept from stu
 	where stu_id = v_stuid;
-	if v_stuid = '9911111' then DBMS_OUTPUT.PUT_LINE('È«±æµ¿ÀÌ³×!!!');
-	else DBMS_OUTPUT.PUT_LINE('ÇĞ¹ø : ' || v_stuid || ', ÀÌ¸§ : ' || v_stuname || ', ÇĞ°ú : ' || v_studept);
+	if v_stuid = '9911111' then DBMS_OUTPUT.PUT_LINE('í™ê¸¸ë™ì´ë„¤!!!');
+	else DBMS_OUTPUT.PUT_LINE('í•™ë²ˆ : ' || v_stuid || ', ì´ë¦„ : ' || v_stuname || ', í•™ê³¼ : ' || v_studept);
 	end if;
 
 End;
@@ -88,7 +88,7 @@ Begin
 END;
 /
 
--- Cursor ¿¹Á¦1. ÇĞ°ú°¡ 'computer'ÀÎ ÇĞ»ıµéÀÇ ÇĞ¹ø°ú ÀÌ¸§À» º¸¿© ÁÖ´Â ÇÁ·Î½ÃÀú ¸¸µé±â
+-- Cursor ì˜ˆì œ1. í•™ê³¼ê°€ 'computer'ì¸ í•™ìƒë“¤ì˜ í•™ë²ˆê³¼ ì´ë¦„ì„ ë³´ì—¬ ì£¼ëŠ” í”„ë¡œì‹œì € ë§Œë“¤ê¸°
 Create or replace procedure show_com
 IS
    v_stuid  stu.stu_id%TYPE;
@@ -126,8 +126,8 @@ BEGIN
 END show_com2;
 /
 
--- Cursor ¿¹Á¦2. Ä¿¼­ ¸Å°³ º¯¼ö·Î ÇĞ¹øÀ» Áı¾î³Ö¾î¼­ ±× ÇĞ¹ø¿¡ ÇØ´çÇÏ´Â ÇĞ»ıÀÌ ¼ö°­ÇÏ´Â °ú¸ñÀÇ
---               °ú¸ñ ÄÚµå¸¦ º¸¿© ÁÖ´Â ÇÁ·Î½ÃÀú ¸¸µé±â
+-- Cursor ì˜ˆì œ2. ì»¤ì„œ ë§¤ê°œ ë³€ìˆ˜ë¡œ í•™ë²ˆì„ ì§‘ì–´ë„£ì–´ì„œ ê·¸ í•™ë²ˆì— í•´ë‹¹í•˜ëŠ” í•™ìƒì´ ìˆ˜ê°•í•˜ëŠ” ê³¼ëª©ì˜
+--               ê³¼ëª© ì½”ë“œë¥¼ ë³´ì—¬ ì£¼ëŠ” í”„ë¡œì‹œì € ë§Œë“¤ê¸°
 
 Create or replace procedure show_subid
 IS
@@ -149,7 +149,7 @@ BEGIN
 END show_subid;
 /
 
--- Cursor ¿¹Á¦3. stu Å×ÀÌºí¿¡¼­ ÀÌ¸§ÀÌ 'sslee'ÀÎ ÇĞ»ıÀÇ ÀÌ¸§À» 'cmlee'·Î ¹Ù²Ù´Â ÇÁ·Î½ÃÀú ¸¸µé±â
+-- Cursor ì˜ˆì œ3. stu í…Œì´ë¸”ì—ì„œ ì´ë¦„ì´ 'sslee'ì¸ í•™ìƒì˜ ì´ë¦„ì„ 'cmlee'ë¡œ ë°”ê¾¸ëŠ” í”„ë¡œì‹œì € ë§Œë“¤ê¸°
 
 Create or replace procedure up_name
 IS
