@@ -4,7 +4,7 @@ set serveroutput on;
 Create or Replace package show_stu IS
  procedure showbyid (v_stuid IN varchar2);
  procedure showbyname (v_stuname IN varchar2);
-end show_stu;
+end show_stu; --주의***
 /
 
 -- 패키지 내의 함수 선언

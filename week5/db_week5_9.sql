@@ -1,7 +1,7 @@
 -- Cursor 예제2. 커서 매개 변수로 학번을 집어넣어서 그 학번에 해당하는 학생이 수강하는 과목의
 --               과목 코드를 보여 주는 프로시저 만들기
 
-Create or replace procedure show_subid
+Create or replace procedure show_subid()
 IS
    v_sjid  sugang.sj_id%TYPE;
 
