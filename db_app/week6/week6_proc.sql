@@ -30,7 +30,7 @@ BEGIN
    from stu
    where stu_id = v_stuid;
    
-   if v_stuname <> 'cmlee' then 
+   if v_stuname <> 'cmlee' then -- <> 같지 않다
       dbms_output.put_line(v_stuname);
    else -- 예외 처리
       raise invalid_stuname; 

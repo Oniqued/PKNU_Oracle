@@ -1,9 +1,9 @@
---5ÁÖÂ÷ ½Ç½À ¹®Á¦
+--5ì£¼ì°¨ ì‹¤ìŠµ ë¬¸ì œ
 --
---´ÙÀ½°ú °°Àº ±â´ÉÀ» ÇÏ´Â Stored ProcedureµéÀ» PL/SQL ÇÁ·Î±×·¥À» ÀÌ¿ëÇÏ¿© ¸¸µå½Ã¿À.
---(ÇÁ·Î½ÃÀú ÀÌ¸§Àº ÀÓÀÇ·Î ¼³Á¤ÇÏ¸ç ¹ÙÅÁ Å×ÀÌºíµéÀº ¼ö¾÷ ½Ã°£¿¡ ¸¸µç stu, subject, sugang Å×ÀÌºíÀÔ´Ï´Ù.)
+--ë‹¤ìŒê³¼ ê°™ì€ ê¸°ëŠ¥ì„ í•˜ëŠ” Stored Procedureë“¤ì„ PL/SQL í”„ë¡œê·¸ë¨ì„ ì´ìš©í•˜ì—¬ ë§Œë“œì‹œì˜¤.
+--(í”„ë¡œì‹œì € ì´ë¦„ì€ ì„ì˜ë¡œ ì„¤ì •í•˜ë©° ë°”íƒ• í…Œì´ë¸”ë“¤ì€ ìˆ˜ì—… ì‹œê°„ì— ë§Œë“  stu, subject, sugang í…Œì´ë¸”ì…ë‹ˆë‹¤.)
 --
---1. stu Å×ÀÌºí¿¡ ÇĞ¹ø, ÀÌ¸§, ÇĞ°ú¸¦ ÀÔ·Â¹Ş¾Æ »õ·Î¿î ÇĞ»ıÀ» Ãß°¡½ÃÅ°´Â Stored Procedure¸¦ ¸¸µå½Ã¿À.
+--1. stu í…Œì´ë¸”ì— í•™ë²ˆ, ì´ë¦„, í•™ê³¼ë¥¼ ì…ë ¥ë°›ì•„ ìƒˆë¡œìš´ í•™ìƒì„ ì¶”ê°€ì‹œí‚¤ëŠ” Stored Procedureë¥¼ ë§Œë“œì‹œì˜¤.
 create or replace procedure exam01(
     v_id in stu.stu_id%type,
     v_name in stu.stu_name%type,
@@ -17,7 +17,7 @@ end exam01;
 exec exam01('0012345', 'kim', 'computer');
 select * from stu;
 
---2. subject Å×ÀÌºí¿¡ °ú¸ñ¹øÈ£, °ú¸ñÀÌ¸§, °³¼³ÇĞ°ú¸¦ ÀÔ·Â¹Ş¾Æ »õ·Î¿î °ú¸ñÀ» Ãß°¡½ÃÅ°´Â Stored Procedure¸¦ ¸¸µå½Ã¿À.
+--2. subject í…Œì´ë¸”ì— ê³¼ëª©ë²ˆí˜¸, ê³¼ëª©ì´ë¦„, ê°œì„¤í•™ê³¼ë¥¼ ì…ë ¥ë°›ì•„ ìƒˆë¡œìš´ ê³¼ëª©ì„ ì¶”ê°€ì‹œí‚¤ëŠ” Stored Procedureë¥¼ ë§Œë“œì‹œì˜¤.
 create or replace procedure exam02(
     v_sjid in subject.sj_id%type,
     v_sjname in subject.sj_name%type,
@@ -31,7 +31,7 @@ end exam02;
 exec exam02('cm003', 'algorithm', 'computer');
 select * from subject;
 
---3. Æ¯Á¤ ÇĞ¹øÀ» ÀÔ·Â¹Ş¾Æ sugang Å×ÀÌºí¿¡¼­ ±× ÇĞ»ı°ú °ü·ÃµÈ ¼ö°­ ³»¿ªÀ» »èÁ¦ÇÏ°í stu Å×ÀÌºí¿¡¼­µµ »èÁ¦ÇÏ´Â Stored Procedure¸¦ ¸¸µå½Ã¿À.
+--3. íŠ¹ì • í•™ë²ˆì„ ì…ë ¥ë°›ì•„ sugang í…Œì´ë¸”ì—ì„œ ê·¸ í•™ìƒê³¼ ê´€ë ¨ëœ ìˆ˜ê°• ë‚´ì—­ì„ ì‚­ì œí•˜ê³  stu í…Œì´ë¸”ì—ì„œë„ ì‚­ì œí•˜ëŠ” Stored Procedureë¥¼ ë§Œë“œì‹œì˜¤.
 create or replace procedure exam03(
     v_stuid stu.stu_id%type)
 is
@@ -44,7 +44,7 @@ end exam03;
 exec exam03('0012345');
 select * from stu;
 
---4. subject Å×ÀÌºí¿¡¼­ °ú¸ñ¹øÈ£¸¦ ÀÔ·Â¹Ş¾Æ °ú¸ñ¸íÀ» Ãâ·ÂÇÏ´Â Stored Procedure¸¦ ¸¸µå½Ã¿À.(ÇÁ·Î½ÃÀú¸¦ ½ÇÇàÇÏ¸é Ãâ·Â±îÁö ´Ù µÇ¾î¾ß ÇÕ´Ï´Ù.)
+--4. subject í…Œì´ë¸”ì—ì„œ ê³¼ëª©ë²ˆí˜¸ë¥¼ ì…ë ¥ë°›ì•„ ê³¼ëª©ëª…ì„ ì¶œë ¥í•˜ëŠ” Stored Procedureë¥¼ ë§Œë“œì‹œì˜¤.(í”„ë¡œì‹œì €ë¥¼ ì‹¤í–‰í•˜ë©´ ì¶œë ¥ê¹Œì§€ ë‹¤ ë˜ì–´ì•¼ í•©ë‹ˆë‹¤.)
 set serveroutput on
 create or replace procedure exam04(
     v_sjid subject.sj_id%type)
@@ -52,14 +52,14 @@ is
     v_sjname subject.sj_name%type;
 begin 
     select sj_name into v_sjname from subject where sj_id = v_sjid;
-    dbms_output.put_line('°ú¸ñ¸í: ' ||v_sjname);
+    dbms_output.put_line('ê³¼ëª©ëª…: ' ||v_sjname);
 end exam04;    
 /
 
 exec exam04('cm001');
---¡Ø °ªµéÀ» ÀÔ·Â¹ŞÀ» ¶§´Â C¾ğ¾îÀÇ scanfÃ³·³ Å°º¸µå Å¸ÀÌÇÎÀ¸·Î ÀÔ·Â¹Ş´Â °Ô ¾Æ´Ï¶ó, execute exam1('9955555', 'gyebak', 'computer');ÀÌ·± ½ÄÀ¸·Î ÇÁ·Î½ÃÀú¸¦ ½ÇÇà½ÃÅ³ ¶§ ÀÎÀÚ·Î ÀÔ·ÂÇÏ¸é µË´Ï´Ù.
+--â€» ê°’ë“¤ì„ ì…ë ¥ë°›ì„ ë•ŒëŠ” Cì–¸ì–´ì˜ scanfì²˜ëŸ¼ í‚¤ë³´ë“œ íƒ€ì´í•‘ìœ¼ë¡œ ì…ë ¥ë°›ëŠ” ê²Œ ì•„ë‹ˆë¼, execute exam1('9955555', 'gyebak', 'computer');ì´ëŸ° ì‹ìœ¼ë¡œ í”„ë¡œì‹œì €ë¥¼ ì‹¤í–‰ì‹œí‚¬ ë•Œ ì¸ìë¡œ ì…ë ¥í•˜ë©´ ë©ë‹ˆë‹¤.
 
---5. Ä¿¼­¸¦ ÀÌ¿ëÇÏ¿© ¸Å°³ º¯¼ö·Î ÇĞ¹øÀ» ÀÔ·Â ¹Ş¾Æ ÀÌ ÇĞ»ıÀÌ ¾î¶² °ú¸ñÀ» ¼ö°­ÇÏ°í ÀÖ´ÂÁö °ú¸ñ¹øÈ£¿Í °ú¸ñ ÀÌ¸§À» ¸ğµÎ Ãâ·ÂÇÏ´Â ÇÁ·Î½ÃÀú¸¦ ¸¸µå½Ã¿À
+--5. ì»¤ì„œë¥¼ ì´ìš©í•˜ì—¬ ë§¤ê°œ ë³€ìˆ˜ë¡œ í•™ë²ˆì„ ì…ë ¥ ë°›ì•„ ì´ í•™ìƒì´ ì–´ë–¤ ê³¼ëª©ì„ ìˆ˜ê°•í•˜ê³  ìˆëŠ”ì§€ ê³¼ëª©ë²ˆí˜¸ì™€ ê³¼ëª© ì´ë¦„ì„ ëª¨ë‘ ì¶œë ¥í•˜ëŠ” í”„ë¡œì‹œì €ë¥¼ ë§Œë“œì‹œì˜¤
 create or replace procedure exam05(v_stuid stu.stu_id%type)
 is
     v_sjid subject.sj_id%type;
@@ -81,6 +81,3 @@ end exam05;
 /
 
 exec exam05('9911111');
-
-
-

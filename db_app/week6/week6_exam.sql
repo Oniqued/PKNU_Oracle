@@ -175,7 +175,7 @@ end sg_trigger;
 select * from sugang;
 select * from backup_sg;
 
-Insert into sugang values ('9911111','ec001');
+Insert into sugang values ('9911111','ec001'); -- 만약에 삽입을 함 
 update sugang set sj_id = 'ec002' where stu_id = '9911111' and sj_id = 'ec001';
 delete from sugang where stu_id = '9911111' and sj_id = 'ec002';
 

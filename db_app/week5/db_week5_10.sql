@@ -1,4 +1,4 @@
--- Cursor ¿¹Á¦3. stu Å×ÀÌºí¿¡¼­ ÀÌ¸§ÀÌ 'sslee'ÀÎ ÇĞ»ıÀÇ ÀÌ¸§À» 'cmlee'·Î ¹Ù²Ù´Â ÇÁ·Î½ÃÀú ¸¸µé±â
+-- Cursor ì˜ˆì œ3. stu í…Œì´ë¸”ì—ì„œ ì´ë¦„ì´ 'sslee'ì¸ í•™ìƒì˜ ì´ë¦„ì„ 'cmlee'ë¡œ ë°”ê¾¸ëŠ” í”„ë¡œì‹œì € ë§Œë“¤ê¸°
 
 Create or replace procedure up_name
 IS
