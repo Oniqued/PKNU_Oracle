@@ -4,19 +4,19 @@ drop table STUDENT;
 drop table COURSE;
 
 create table STUDENT (
-  sno number(3) primary key, --Á¦¾à Á¶°Ç Ãß°¡
-  sname nvarchar2(4) constraint sname_always_exists not null, --Á¦¾à Á¶°Ç Ãß°¡ : snameÀº ºñ¾îÀÖÀ¸¸é ¾ÈµÈ´Ù
+  sno number(3) primary key, --ì œì•½ ì¡°ê±´ ì¶”ê°€
+  sname nvarchar2(4) constraint sname_always_exists not null, --ì œì•½ ì¡°ê±´ ì¶”ê°€ : snameì€ ë¹„ì–´ìˆìœ¼ë©´ ì•ˆëœë‹¤
   year number(1) default 1, 
   dept nvarchar2(5),
   unique (dept, sname),
   constraint year_check check (year >=1 and year <=4 )
 );
 
- insert into STUDENT values (100, '³ª¼ö¿µ', 4, 'ÄÄÇ»ÅÍ');
- insert into STUDENT values (200, 'ÀÌÂù¼ö', 3, 'Àü±â');
- insert into STUDENT values (300, 'Á¤±âÅÂ', 1, 'ÄÄÇ»ÅÍ');
- insert into STUDENT values (400, '¼Ûº´±æ', 4, 'ÄÄÇ»ÅÍ');
- insert into STUDENT values (500, '¹ÚÁ¾È­', 2, '»ê°ø');
+ insert into STUDENT values (100, 'ë‚˜ìˆ˜ì˜', 4, 'ì»´í“¨í„°');
+ insert into STUDENT values (200, 'ì´ì°¬ìˆ˜', 3, 'ì „ê¸°');
+ insert into STUDENT values (300, 'ì •ê¸°íƒœ', 1, 'ì»´í“¨í„°');
+ insert into STUDENT values (400, 'ì†¡ë³‘ê¸¸', 4, 'ì»´í“¨í„°');
+ insert into STUDENT values (500, 'ë°•ì¢…í™”', 2, 'ì‚°ê³µ');
   
 create table COURSE (
   cno char(4),
@@ -28,11 +28,11 @@ create table COURSE (
   unique (cno,professor)
 );
 
-insert into COURSE values ('C123', 'CÇÁ·Î±×·¡¹Ö',  3,	'ÄÄÇ»ÅÍ', '±è¼º±¹');
-insert into COURSE values ('C312', 'ÀÚ·á±¸Á¶',	   3,	'ÄÄÇ»ÅÍ', 'È²¼ö°ü');
-insert into COURSE values ('C324', 'È­ÀÏ±¸Á¶',	   3,	'ÄÄÇ»ÅÍ', 'ÀÌ±ÔÂù');
-insert into COURSE values ('C413', 'µ¥ÀÌÅÍº£ÀÌ½º', 3,	'ÄÄÇ»ÅÍ', 'ÀÌÀÏ·Î');
-insert into COURSE values ('E412', '¹İµµÃ¼',	   3,	'ÀüÀÚ',	  'È«ºÀÁø');
+insert into COURSE values ('C123', 'Cí”„ë¡œê·¸ë˜ë°',  3,	'ì»´í“¨í„°', 'ê¹€ì„±êµ­');
+insert into COURSE values ('C312', 'ìë£Œêµ¬ì¡°',	   3,	'ì»´í“¨í„°', 'í™©ìˆ˜ê´€');
+insert into COURSE values ('C324', 'í™”ì¼êµ¬ì¡°',	   3,	'ì»´í“¨í„°', 'ì´ê·œì°¬');
+insert into COURSE values ('C413', 'ë°ì´í„°ë² ì´ìŠ¤', 3,	'ì»´í“¨í„°', 'ì´ì¼ë¡œ');
+insert into COURSE values ('E412', 'ë°˜ë„ì²´',	   3,	'ì „ì',	  'í™ë´‰ì§„');
   
   
   create table ENROL (
