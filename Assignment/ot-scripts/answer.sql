@@ -1,6 +1,13 @@
 -- 데이터베이스 과제 2
 
 -- 1. 주문상태 및 주문일자에 상관없이 'Raytheon'으로부터 받은 주문중 최대 금액은 얼마인가?
+-- 자연조인 사용
+select name, max(quantity*unit_price) as 최대주문금액_달러 
+from (customers natural join orders) join order_items on orders.order_id = order_items.order_id
+where name = 'Raytheon'
+group by name;
+
+-- 카티션 곱 사용
 select name, max(quantity*unit_price) as 최대주문금액_달러 from customers c, orders o, order_items o_i
 where c.customer_id = o.customer_id
 and o.order_id = o_i.order_id

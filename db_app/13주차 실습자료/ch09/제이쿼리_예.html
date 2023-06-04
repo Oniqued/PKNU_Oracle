@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>제이쿼리 코드 실행</title>
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script>
+		// $ : 제이쿼리 메서드 / $(document).ready : 이 문서가 준비되면, 
+		$(document).ready( function() {
+			msg1();
+			$('#id1').click( function(){ // id1을 클릭하면 msg2 실행 
+				msg2();
+			});					
+		});					
+		function msg1() {
+			alert('msg1():문서로드후 자동으로 경고창을 표시합니다.');
+		}	
+		function msg2() {
+			$('#id2').css('background','silver'); // id2 엘리먼트를 가져와서 css를 수정할것 (backgound를 silver로)
+			$('#id2').text('msg2():HTML문서 변경되었습니다.');
+		}		
+		/*		
+		function msg2() {
+			$('#id2').html('<div style="background:silver">msg2():HTML문서 변경되었습니다.</div>');
+		}*/
+	</script>
+</head>
+<body>
+	<button id="id1">선택하면 메시지를 변경합니다.</button><br/><br/>
+	<div id="id2">메시지 : </div>	
+</body>
+</html>

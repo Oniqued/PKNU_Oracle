@@ -1,0 +1,22 @@
+********  MP4Box Command Line used  *********
+
+MP4Box.exe  -splitx 44:66 "J:\Àú¼ú_5Â÷(20141022)\code\ch08_dokdoApp\mop-.mp4"
+
+
+********  YAMB Output  **********************
+
+[15:42:21] :  YAMB 1.6.0 started !
+[15:42:21] :  OS type detection...
+[15:42:21] :   Professional (version 6.1, Build 7601 : Service Pack 1)
+[15:42:21] :  Checking MP4Box location...MP4Box found.
+[15:42:21] :  Checking MediaInfo.dll...0.7.1.2 found.
+[15:43:03] :  Splitting started...
+[15:43:23] :  Splitting finished completely.
+
+
+********  MP4Box stdout  ********************
+
+Adjusting chunk start time to previous random access at 43.84 sec
+                                               
+                                                 
+
